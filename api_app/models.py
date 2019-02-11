@@ -5,7 +5,7 @@ class User(models.Model):
 	username = models.CharField(max_length=20)
 	screenname = models.CharField(max_length=20)
 	location = models.CharField(max_length=50)
-	url = models.CharField(max_length=50)
+	url = models.CharField(max_length=40)
 	description = models.TextField()
 	user_id = models.IntegerField(primary_key=True)
 
