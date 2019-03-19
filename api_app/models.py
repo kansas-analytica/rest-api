@@ -4,7 +4,7 @@ class Tweet(models.Model):
     created_at = models.DateTimeField()
     id_str = models.CharField(max_length=255, primary_key=True)
     text = models.TextField()
-    user_id = models.IntegerField()
+    user = models.ForeignKey('TwitterAccount', on_delete=models.CASCADE)
 
     class Meta:
         managed = False
