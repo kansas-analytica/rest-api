@@ -21,6 +21,13 @@ class TwitterAccount(models.Model):
     description = models.TextField()
     date_created = models.DateTimeField()
 
+    followers = models.IntegerField()
+    following = models.IntegerField()
+
+    image_url = models.CharField(max_length=300, blank=True, null=True)
+
+    last_updated = models.DateTimeField()
+
     def __str__(self):
         return self.name
 
