@@ -16,4 +16,5 @@ class ListTweetsView(generics.ListAPIView):
             queryset = queryset.filter(user__name__iexact=username)
         return queryset
 
-
+class UserTweetView(generics.ListAPIView):
+	
