@@ -1,6 +1,6 @@
 from django.db import models
 
-class Tweets(models.Model):
+class Tweet(models.Model):
     created_at = models.DateTimeField()
     id_str = models.CharField(max_length=255, primary_key=True)
     text = models.TextField()
@@ -11,7 +11,7 @@ class Tweets(models.Model):
         db_table = 'tweets'
 
 
-class TwitterAccounts(models.Model):
+class TwitterAccount(models.Model):
     id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=255)
     screen_name = models.CharField(max_length=255)

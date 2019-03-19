@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Tweets, TwitterAccounts
+from .models import Tweet, TwitterAccount
 
 # Register your models here.
 
-admin.site.register(Tweets)
-admin.site.register(TwitterAccounts)
+admin.site.register(Tweet)
+admin.site.register(TwitterAccount)
