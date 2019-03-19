@@ -6,6 +6,9 @@ class Tweet(models.Model):
     text = models.TextField()
     user = models.ForeignKey('TwitterAccount', on_delete=models.CASCADE)
 
+    def __str__(self):
+        return "{} - {}".format(self.user.name, self.id_str)
+
     class Meta:
         managed = False
         db_table = 'tweets'
@@ -17,6 +20,9 @@ class TwitterAccount(models.Model):
     screen_name = models.CharField(max_length=255)
     description = models.TextField()
     date_created = models.DateTimeField()
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         managed = False
