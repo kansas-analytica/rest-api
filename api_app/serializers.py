@@ -1,8 +1,7 @@
-
-from django.contrib.auth.models import User, Tweet
 from rest_framework import serializers
+from .models import Tweet, TwitterAccount
 
-class UserSerializer(serializers.HyperlinkedModelSerializer):
-	class Meta:
-		model = User
-		fields = ('username', 'screenname', 'location', 'url', 'description', 'user_id')
+class TweetSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tweet
+        fields = ("id_str", "created_at", "text", "user_id")
