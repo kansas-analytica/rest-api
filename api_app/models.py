@@ -15,7 +15,7 @@ class Tweet(models.Model):
 
 
 class TwitterAccount(models.Model):
-    id = models.IntegerField(primary_key=True)
+    id = models.BigIntegerField(primary_key=True)
     name = models.CharField(max_length=255)
     screen_name = models.CharField(max_length=255)
     description = models.TextField()
@@ -23,13 +23,13 @@ class TwitterAccount(models.Model):
 
     followers = models.IntegerField()
     following = models.IntegerField()
-
+    # statuses_count = models.IntegerField()
     image_url = models.CharField(max_length=300, blank=True, null=True)
 
     last_updated = models.DateTimeField()
 
     def __str__(self):
-        return self.name
+        return self.screen_name
 
     class Meta:
         managed = False
